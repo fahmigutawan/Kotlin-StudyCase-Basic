@@ -33,7 +33,7 @@ object SimpleNavigation {
     fun showAllMahasiswaUI() {
         println("\n===== DAFTAR MAHASISWA =====")
 
-        val mahasiswa = SimpleRepository.getAllMahasiswaLulus()
+        val mahasiswa = SimpleRepository.getAllMahasiswa()
 
         if (mahasiswa.isEmpty()) {
             println("Belum ada mahasiswa.")
@@ -48,13 +48,13 @@ object SimpleNavigation {
     fun showAddMahasiswaUI() {
         println("\n===== TAMBAH MAHASISWA =====")
 
-        print("NIM: ");
+        print("NIM: ")
         val nim = readLine()?.trim().orEmpty()
 
-        print("Nama: ");
+        print("Nama: ")
         val nama = readLine()?.trim().orEmpty()
 
-        print("Jurusan: ");
+        print("Jurusan: ")
         val jurusan = readLine()?.trim().orEmpty()
 
         val nilaiMatkul = mutableMapOf<String, Int>()
@@ -95,14 +95,12 @@ object SimpleNavigation {
         println("Status: ${mhs.status()}")
         println("Rata-rata: ${mhs.average()}")
 
-        if (mhs.nilaiMatkul.isNullOrEmpty()) {
+        if (mhs.nilaiMatkul.isEmpty()) {
             println("Belum ada nilai untuk mahasiswa ini.")
         } else {
             println("Daftar Nilai:")
-            mhs.nilaiMatkul.forEach {
-                TODO()
-                // Print per-baris dengan format:
-                // - [Nama Matkul]: [Nilai] ([Huruf Nilai])
+            mhs.nilaiMatkul.forEach { (matkul, nilai) ->
+                println("- $matkul: $nilai (${NilaiUtil.getHuruf(nilai)})")
             }
         }
     }
