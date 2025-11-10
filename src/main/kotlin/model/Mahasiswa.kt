@@ -26,11 +26,13 @@ data class Mahasiswa(
         TODO()
     }
 
-    fun printPerLine(no: Int? = null):String {
+    fun printPerLine():String {
         /*
         Print baris Mahasiswa dengan masing-masing memiliki format penulisan berikut:
-        [No]. [NIM] - [NAMA] - [JURUSAN] | Rata-rata: [RATA-RATA] | [STATUS]
+        - [NIM] - [NAMA] - [JURUSAN] | Rata-rata: [RATA-RATA] | [STATUS]
          */
         TODO()
     }
 }
+
+

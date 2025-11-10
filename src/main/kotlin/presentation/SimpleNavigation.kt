@@ -40,8 +40,8 @@ object SimpleNavigation {
             return
         }
 
-        mahasiswa.forEachIndexed { index, item ->
-            item.printPerLine(index + 1)
+        mahasiswa.forEach { item ->
+            item.printPerLine()
         }
     }
 
@@ -116,8 +116,8 @@ object SimpleNavigation {
             return
         }
 
-        lulus.forEachIndexed { index, item ->
-            item.printPerLine(index + 1)
+        lulus.forEach { item ->
+            item.printPerLine()
         }
     }
 
@@ -130,8 +130,8 @@ object SimpleNavigation {
             return
         }
 
-        tidakLulus.forEachIndexed { index, item ->
-            item.printPerLine(index + 1)
+        tidakLulus.forEach { item ->
+            item.printPerLine()
         }
     }
 }
